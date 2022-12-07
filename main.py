@@ -10,11 +10,12 @@ class User(BaseModel):
     email: Optional[str] = None
     phone_number: Optional[int] = None
 
+
 @fastapi.get("/")
-async def root():
+def root():
     return {"message: Welcome to my API"}
 
 @fastapi.post("/users")
-async def create_user(new_user: User):
+def create_user(new_user: User):
     print(new_user)
-    return { "message": "New User created", "user_info": new_user.dict() }
+    return { "message": "New User created", "user_info": new_user.dict() }  
