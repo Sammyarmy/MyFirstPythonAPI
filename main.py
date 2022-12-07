@@ -14,7 +14,7 @@ class User(BaseModel):
 async def root():
     return {"message: Welcome to my API"}
 
-@fastapi.post("/createuser")
+@fastapi.post("/users")
 async def create_user(new_user: User):
     print(new_user)
-    return {"message": "Successfully created user", "username": f"{new_user.username}", "email": f"{new_user.email}" }
+    return { "message": "New User created", "user_info": new_user.dict() }
