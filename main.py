@@ -18,4 +18,4 @@ def root():
 @fastapi.post("/users")
 def create_user(new_user: User):
     print(new_user)
-    return { "message": "New User created", "user_info": new_user.dict() }  
+    return { "message": "New User created", "user_info": new_user.dict() }
