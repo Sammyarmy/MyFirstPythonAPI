@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import Body, FastAPI
 
 fastapi = FastAPI()
 
@@ -7,5 +7,6 @@ async def root():
     return {"message: Welcome to my API"}
 
 @fastapi.post("/createuser")
-async def create_user():
-    return {"message: Successfully created user"}
+async def create_user(body: dict = Body(...)):
+    print(body)
+    return {"message": "Successfully created user", "username": f"{body['username']}" }
