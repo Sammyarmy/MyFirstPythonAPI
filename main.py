@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+fastapi = FastAPI()
 
-@app.get("/")
+@fastapi.get("/")
 async def root():
-    return {"message: Hello World"}
+    return {"message: Welcome to my API"}
+
+@fastapi.post("/createuser")
+async def create_user():
+    return {"message: Successfully created user"}
