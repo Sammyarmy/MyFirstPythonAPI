@@ -10,7 +10,6 @@ class User(BaseModel):
     email: Optional[str] = None
     phone_number: Optional[int] = None
 
-
 @fastapi.get("/")
 def root():
     return {"message: Welcome to my API"}
