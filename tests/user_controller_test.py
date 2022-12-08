@@ -1,4 +1,4 @@
-from main import User, create_user, root
+from app.main import User, create_user, root
 
 def test_root_returns_correct_response():
     result = root()
