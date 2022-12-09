@@ -1,7 +1,7 @@
 from sqlalchemy import TIMESTAMP, Column, Integer, String, text
-from .database import Base
+from .setup import Base
 
-class User(Base):
+class db_User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True, nullable=False)
     username = Column(String, nullable=False, unique=True)
