@@ -19,7 +19,6 @@ def root():
 
 @fastapi.post("/users", status_code=status.HTTP_201_CREATED)
 def create_user(new_user: User, db: Session = Depends(get_db)):
-    print(new_user)
     user = db_create_user(new_user, db)
     return { "message": "New User created", "user_info": user}
 
