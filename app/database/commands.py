@@ -11,9 +11,7 @@ def db_create_user(new_user: User, db: Session):
     return user
 
 def db_get_users(db: Session):
-    user = db.query(db_User).all()
-    return user
+    return db.query(db_User).all()
 
 def db_get_user(username:str, db: Session):
-    user = db.query(db_User).filter(db_User.username == username).first()
-    return user
+    return db.query(db_User).filter(db_User.username == username).first()
